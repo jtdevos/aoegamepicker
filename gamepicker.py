@@ -2,7 +2,7 @@
 
 
 import random
-
+from setting import Setting, BooleanSetting
 def choose_item_with_seed(my_list, seed_value):
     """
 Chooses an item from a list at random using a seed value.
@@ -34,34 +34,9 @@ new_seed_key = 101
 chosen_fruit_run3 = choose_item_with_seed(my_favorite_fruits, new_seed_key)
 # print(f"Chosen fruit with seed {new_seed_key}: {chosen_fruit_run3}")
 
-aoe2_game_modes = {
-    "Random Map",
-    "Regicide",
-    "King of the Hill",
-    "Turbo Random",
-    "Deathmatch",
-    "Custom Scenario",
-    "Defend the Wonder",
-    "Empire Wars",
-    "Capture the Relic",
-    "Sudden Death",
-    "Battle Royale",
-    "Wonder Race",
-    "Relic Race",
-    "DLC Campaign",
-    "Scenario Campaign",
-    "Co-op Campaign",
-    "Extreme Random Map",
-    "Training",
-    "Standard",
-    "Unranked",
-    "Ranked"
-}
-
-aoe2_game_modes_gemini = {"Random Map", "Empire Wars", "Death Match", "Regicide", "King of the Hill",
+aoe2_game_modes = {"Random Map", "Empire Wars", "Death Match", "Regicide", "King of the Hill",
                           "Capture the Relic", "Wonder Race", "Defend the Wonder", "Sudden Death", "Battle Royale",
                           "Co-Op Campaign", "Custom Scenario"}
 
-mode_diff =  aoe2_game_modes - aoe2_game_modes_gemini
 print(f"{aoe2_game_modes=}")
-print(f"{mode_diff=}")
+

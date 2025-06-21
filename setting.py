@@ -43,10 +43,46 @@ Initialize a BooleanSetting.
     def __repr__(self):
         return f"BooleanSetting(name='{self.name}', enabled={self.enabled})"
 
+class SettingGroup:
+    def __init__(self, name, settings=None):
+        """
+        Initialize a SettingGroup.
+
+        :param name: str - The name of the group (e.g., "Game Settings")
+        :param settings: list of Setting - Optional initial list of settings
+        """
+        self.name = name
+        self.settings = list(settings) if settings else []
+
+    def add_setting(self, setting):
+        """Add a Setting object to the group."""
+        if not isinstance(setting, Setting):
+            raise TypeError("Only Setting instances can be added")
+        self.settings.append(setting)
+
+    def get_setting(self, name):
+        """Retrieve a Setting by name (first match), or None if not found."""
+        for setting in self.settings:
+            if setting.name == name:
+                return setting
+        return None
+
+    def remove_setting(self, name):
+        """Remove the first Setting with the given name."""
+        self.settings = [s for s in self.settings if s.name != name]
+
+    def list_settings(self):
+        """Return the list of settings in the group."""
+        return self.settings
+
+    def __repr__(self):
+        names = [s.name for s in self.settings]
+        return f"SettingGroup(name='{self.name}', settings={names})"
+
 
 # --- Aliases ---
 S = Setting
 BS = BooleanSetting
-
+SG = SettingGroup
 # Public API
-__all__ = ["Setting", "BooleanSetting", "S", "BS"]
+__all__ = ["Setting", "BooleanSetting", "SettingGroup", "S", "BS", "SG"]

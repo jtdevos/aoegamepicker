@@ -43,4 +43,10 @@ Initialize a BooleanSetting.
     def __repr__(self):
         return f"BooleanSetting(name='{self.name}', enabled={self.enabled})"
 
-        
+
+# --- Aliases ---
+S = Setting
+BS = BooleanSetting
+
+# Public API
+__all__ = ["Setting", "BooleanSetting", "S", "BS"]

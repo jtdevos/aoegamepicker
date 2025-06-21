@@ -1,4 +1,5 @@
-from setting import S, BS
+from setting import S, BS, Setting
+from typing import List
 
 game_settings = (
     S('Data Mod', ('Definitive Set')),
@@ -38,6 +39,19 @@ advanced_settings = (
     BS('Record Game')
 )
 
+def get_setting(settings: List[Setting], name: str) -> Setting:
+    """
+    Retrieve a Setting from a list by its name.
+
+    :param settings: List of Setting objects
+    :param name: The name of the setting to find
+    :return: The Setting object with the matching name
+    :raises ValueError: If no setting with the given name is found
+    """
+    for setting in settings:
+        if setting.name == name:
+            return setting
+    raise ValueError(f"Setting with name '{name}' not found.")
 
 
 print('done processing settings')

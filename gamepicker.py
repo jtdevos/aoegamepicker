@@ -23,13 +23,45 @@ my_favorite_fruits = ["apple", "banana", "cherry", "date", "elderberry"]
 # Choose an item with a specific seed value
 seed_key = 42
 chosen_fruit_run1 = choose_item_with_seed(my_favorite_fruits, seed_key)
-print(f"Chosen fruit with seed {seed_key}: {chosen_fruit_run1}")
+# print(f"Chosen fruit with seed {seed_key}: {chosen_fruit_run1}")
 
 # Running it again with the same seed will produce the same result
 chosen_fruit_run2 = choose_item_with_seed(my_favorite_fruits, seed_key)
-print(f"Chosen fruit with seed {seed_key} again: {chosen_fruit_run2}")
+# print(f"Chosen fruit with seed {seed_key} again: {chosen_fruit_run2}")
 
 # Using a different seed will likely produce a different result
 new_seed_key = 101
 chosen_fruit_run3 = choose_item_with_seed(my_favorite_fruits, new_seed_key)
-print(f"Chosen fruit with seed {new_seed_key}: {chosen_fruit_run3}")
+# print(f"Chosen fruit with seed {new_seed_key}: {chosen_fruit_run3}")
+
+aoe2_game_modes = {
+    "Random Map",
+    "Regicide",
+    "King of the Hill",
+    "Turbo Random",
+    "Deathmatch",
+    "Custom Scenario",
+    "Defend the Wonder",
+    "Empire Wars",
+    "Capture the Relic",
+    "Sudden Death",
+    "Battle Royale",
+    "Wonder Race",
+    "Relic Race",
+    "DLC Campaign",
+    "Scenario Campaign",
+    "Co-op Campaign",
+    "Extreme Random Map",
+    "Training",
+    "Standard",
+    "Unranked",
+    "Ranked"
+}
+
+aoe2_game_modes_gemini = {"Random Map", "Empire Wars", "Death Match", "Regicide", "King of the Hill",
+                          "Capture the Relic", "Wonder Race", "Defend the Wonder", "Sudden Death", "Battle Royale",
+                          "Co-Op Campaign", "Custom Scenario"}
+
+mode_diff =  aoe2_game_modes - aoe2_game_modes_gemini
+print(f"{aoe2_game_modes=}")
+print(f"{mode_diff=}")
